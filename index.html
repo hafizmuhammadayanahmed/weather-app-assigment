@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b35">
+  <title>SkyCast — Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-icon">☀</span> skycast</a>
+      <span class="live-label"><span class="live-dot"></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="hero">
+      <div class="intro">
+        <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+        <h1>Forecast made<br><span>beautifully simple.</span></h1>
+        <p class="subtext">Find the weather anywhere in the world.</p>
+      </div>
+      <form class="search" id="searchForm">
+        <span class="search-icon">⌕</span>
+        <input id="cityInput" type="search" placeholder="Search a city..." aria-label="City name" autocomplete="off">
+        <button type="submit">Search <span>→</span></button>
+      </form>
+    </section>
+
+    <section id="status" class="status" role="status">Search for a city to see its current weather.</section>
+
+    <section id="weatherPanel" class="weather-panel hidden" aria-live="polite">
+      <div class="current-card">
+        <div class="current-top">
+          <div>
+            <p class="eyebrow">CURRENT WEATHER</p>
+            <h2 id="cityName">—</h2>
+            <p id="localDate" class="muted">—</p>
+          </div>
+          <div class="weather-symbol" id="weatherIcon">☀️</div>
+        </div>
+        <div class="temperature-row">
+          <div class="temperature"><span id="temperature">--</span><sup>°C</sup></div>
+          <div class="condition">
+            <strong id="condition">—</strong>
+            <span>Feels like <b id="feelsLike">--</b>°C</span>
+          </div>
+        </div>
+        <div class="high-low">
+          <span>H: <b id="tempMax">--</b>°</span>
+          <span>L: <b id="tempMin">--</b>°</span>
+        </div>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card"><span class="detail-icon">💧</span><span class="detail-label">Humidity</span><strong><b id="humidity">--</b><small>%</small></strong></article>
+        <article class="detail-card"><span class="detail-icon">🌬️</span><span class="detail-label">Wind speed</span><strong><b id="wind">--</b><small>km/h</small></strong></article>
+        <article class="detail-card"><span class="detail-icon">🌡️</span><span class="detail-label">Pressure</span><strong><b id="pressure">--</b><small>hPa</small></strong></article>
+        <article class="detail-card"><span class="detail-icon">☁️</span><span class="detail-label">Cloud cover</span><strong><b id="cloud">--</b><small>%</small></strong></article>
+      </div>
+    </section>
+
+    <footer>Made with <span>♥</span> · SkyCast Weather</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
